@@ -1007,6 +1007,33 @@ void DQMGenericClient::computeResolution(DQMStore::IBooker& ibooker,
           }
         }
       }
+
+      for (int i = 1; i <= nBin; i++) {
+        double m = meanME->getBinContent(i);
+        double dm = meanME->getBinError(i);
+        double s = sigmaME->getBinContent(i);
+        double ds = sigmaME->getBinError(i);
+
+        if (m != 0.0) {
+          double rel_res = s / m;
+          double rel_res_err = std::sqrt( (ds / m) * (ds / m) + (s * dm / (m * m)) * (s * dm / (m * m)) );
+
+          if (sigmaME->kind() == MonitorElement::Kind::TPROFILE) {
+            sigmaME->setBinContent(i, rel_res);
+            sigmaME->setBinError(i, rel_res_err);
+            sigmaME->setBinEntries(i, 1);           } else {
+            sigmaME->setBinContent(i, rel_res);
+            sigmaME->setBinError(i, rel_res_err);
+          }
+        } else {
+          sigmaME->setBinContent(i, 0.0);
+          sigmaME->setBinError(i, 0.0);
+          if (sigmaME->kind() == MonitorElement::Kind::TPROFILE) {
+            sigmaME->setBinEntries(i, 0);
+          }
+        }
+      }
+
     }
   } else {
     ME* meanME;
@@ -1047,6 +1074,33 @@ void DQMGenericClient::computeResolution(DQMStore::IBooker& ibooker,
           }
         }
       }
+
+      for (int i = 1; i <= nBin; i++) {
+        double m = meanME->getBinContent(i);
+        double dm = meanME->getBinError(i);
+        double s = sigmaME->getBinContent(i);
+        double ds = sigmaME->getBinError(i);
+
+        if (m != 0.0) {
+          double rel_res = s / m;
+          double rel_res_err = std::sqrt( (ds / m) * (ds / m) + (s * dm / (m * m)) * (s * dm / (m * m)) );
+
+          if (sigmaME->kind() == MonitorElement::Kind::TPROFILE) {
+            sigmaME->setBinContent(i, rel_res);
+            sigmaME->setBinError(i, rel_res_err);
+            sigmaME->setBinEntries(i, 1);           } else {
+            sigmaME->setBinContent(i, rel_res);
+            sigmaME->setBinError(i, rel_res_err);
+          }
+        } else {
+          sigmaME->setBinContent(i, 0.0);
+          sigmaME->setBinError(i, 0.0);
+          if (sigmaME->kind() == MonitorElement::Kind::TPROFILE) {
+            sigmaME->setBinEntries(i, 0);
+          }
+        }
+      }
+
     }
   }
   delete[] lowedgesfloats;
