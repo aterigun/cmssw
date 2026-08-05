@@ -58,11 +58,11 @@ namespace io_v1 {
           setPdgId(pdgId * tk->charge());
           setCharge(tk->charge());
           rawEnergy_ = trackster->raw_energy();
-          auto const& regrE = trackster->regressed_energy();
-          math::XYZTLorentzVector p4(regrE * tk->momentum().unit().x(),
-                                     regrE * tk->momentum().unit().y(),
-                                     regrE * tk->momentum().unit().z(),
-                                     regrE);
+        //  auto const& rawEnergy = trackster->regressed_energy();
+          math::XYZTLorentzVector p4(rawEnergy_ * tk->momentum().unit().x(),
+                                     rawEnergy_ * tk->momentum().unit().y(),
+                                     rawEnergy_ * tk->momentum().unit().z(),
+                                     rawEnergy_);
           setP4(p4);
 
         } else {
@@ -70,11 +70,11 @@ namespace io_v1 {
           setPdgId(pdgId);
           setCharge(0);
           rawEnergy_ = trackster->raw_energy();
-          const float& regrE = trackster->regressed_energy();
-          math::XYZTLorentzVector p4(regrE * trackster->barycenter().unit().x(),
-                                     regrE * trackster->barycenter().unit().y(),
-                                     regrE * trackster->barycenter().unit().z(),
-                                     regrE);
+         // const float& rawEnergy = trackster->regressed_energy();
+          math::XYZTLorentzVector p4(rawEnergy_ * trackster->barycenter().unit().x(),
+                                     rawEnergy_ * trackster->barycenter().unit().y(),
+                                     rawEnergy_ * trackster->barycenter().unit().z(),
+                                     rawEnergy_);
           setP4(p4);
         }
       } else {
