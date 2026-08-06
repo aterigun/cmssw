@@ -1,0 +1,17 @@
+import FWCore.ParameterSet.Config as cms
+
+from ..modules.hltTrackWithVertexRefSelectorForJPT_cfi import *
+from ..modules.hltTrackRefsForJPT_cfi import *
+from ..modules.hltAK4TrackJetsForJPT_cfi import *
+from ..modules.hltTrackExtrapolatorForJPT_cfi import *
+from ..modules.hltJetPlusTrackAddonSeedRecoForJPT_cfi import *
+from ..modules.hltJetPlusTrackZSPCorJetAntiKt4_cfi import *
+
+HLTJetPlusTrackForScoutingSequence = cms.Sequence(
+    hltTrackWithVertexRefSelectorForJPT
+    + hltTrackRefsForJPT
+    + hltAK4TrackJetsForJPT
+    + hltTrackExtrapolatorForJPT
+    + hltJetPlusTrackAddonSeedRecoForJPT
+    + hltJetPlusTrackZSPCorJetAntiKt4
+)
