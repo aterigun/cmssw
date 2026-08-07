@@ -4,7 +4,8 @@ hltJetPlusTrackAddonSeedRecoForJPT = cms.EDProducer("JetPlusTrackAddonSeedProduc
     srcCaloJets = cms.InputTag("hltAk4CaloJetsForTrk"),
     srcTrackJets = cms.InputTag("hltAK4TrackJetsForJPT"),
     srcPVs = cms.InputTag("hltPhase2PixelVertices"),
-    tracks = cms.InputTag("hltGeneralTracks"),
+    towerMaker = cms.InputTag("hltPhase2TowerMakerForAll"),
+    PFCandidates = cms.InputTag("hltParticleFlowTmp"),
+    UsePAT = cms.bool(False),
     dRcone = cms.double(0.4),
-    ptCut = cms.double(15.0),
 )

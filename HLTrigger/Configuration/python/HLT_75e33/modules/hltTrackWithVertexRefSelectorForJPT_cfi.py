@@ -18,6 +18,4 @@ hltTrackWithVertexRefSelectorForJPT = cms.EDProducer("TrackWithVertexRefSelector
     vtxFallback = cms.bool(True),
     zetaVtx = cms.double(1.0),
     rhoVtx = cms.double(0.2),
-    copyExtras = cms.untracked.bool(False),
-    copyTrajectories = cms.untracked.bool(False),
 )

@@ -6,6 +6,8 @@ from ..modules.hltAK4TrackJetsForJPT_cfi import *
 from ..modules.hltTrackExtrapolatorForJPT_cfi import *
 from ..modules.hltJetPlusTrackAddonSeedRecoForJPT_cfi import *
 from ..modules.hltJetPlusTrackZSPCorJetAntiKt4_cfi import *
+from ..modules.hltAK4JetTracksAssociatorAtVertexForJPT_cfi import *
+from ..modules.hltAK4JetTracksAssociatorAtCaloFaceForJPT_cfi import *
 
 HLTJetPlusTrackForScoutingSequence = cms.Sequence(
     hltTrackWithVertexRefSelectorForJPT
@@ -13,5 +15,7 @@ HLTJetPlusTrackForScoutingSequence = cms.Sequence(
     + hltAK4TrackJetsForJPT
     + hltTrackExtrapolatorForJPT
     + hltJetPlusTrackAddonSeedRecoForJPT
+    + hltAK4JetTracksAssociatorAtVertexForJPT
+    + hltAK4JetTracksAssociatorAtCaloFaceForJPT
     + hltJetPlusTrackZSPCorJetAntiKt4
 )
