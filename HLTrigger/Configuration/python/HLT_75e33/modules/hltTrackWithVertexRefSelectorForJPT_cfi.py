@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 hltTrackWithVertexRefSelectorForJPT = cms.EDProducer("TrackWithVertexRefSelector",
     src = cms.InputTag("hltGeneralTracks"),
-    vertexTag = cms.InputTag("hltPhase2PixelVertices"),
+    vertexTag = cms.InputTag("hltOfflinePrimaryVertices"),
     quality = cms.string("highPurity"),
     d0Max = cms.double(999.0),
     dzMax = cms.double(999.0),

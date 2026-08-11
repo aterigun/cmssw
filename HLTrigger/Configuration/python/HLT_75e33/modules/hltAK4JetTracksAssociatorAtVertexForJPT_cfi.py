@@ -5,5 +5,5 @@ hltAK4JetTracksAssociatorAtVertexForJPT = cms.EDProducer("JetTracksAssociatorAtV
     tracks = cms.InputTag("hltGeneralTracks"),
     coneSize = cms.double(0.4),
     useAssigned = cms.bool(False),
-    pvSrc = cms.InputTag("hltPhase2PixelVertices"),
+    pvSrc = cms.InputTag("hltOfflinePrimaryVertices"),
 )

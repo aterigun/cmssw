@@ -8,6 +8,7 @@ from ..modules.hltJetPlusTrackAddonSeedRecoForJPT_cfi import *
 from ..modules.hltJetPlusTrackZSPCorJetAntiKt4_cfi import *
 from ..modules.hltAK4JetTracksAssociatorAtVertexForJPT_cfi import *
 from ..modules.hltAK4JetTracksAssociatorAtCaloFaceForJPT_cfi import *
+from TrackPropagation.SteppingHelixPropagator.SteppingHelixPropagatorAlong_cfi import *
 
 HLTJetPlusTrackForScoutingSequence = cms.Sequence(
     hltTrackWithVertexRefSelectorForJPT
