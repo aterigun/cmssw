@@ -32,7 +32,7 @@ hltJetPlusTrackZSPCorJetAntiKt4 = cms.EDProducer("JetPlusTrackProducer",
     UseEfficiency = cms.bool(True),
 
     # --- muons
-    UseMuons = cms.bool(True),
+    UseMuons = cms.bool(False),
     Muons = cms.InputTag("hltPhase2L3MuonsNoID"),
     PatMuons = cms.InputTag(""),
     muonPtmatch = cms.double(0.1),

@@ -491,14 +491,14 @@ void JetPlusTrackCorrector::matchTracks(const JetTracks& jet_tracks,
       bool found = findTrack(jet_tracks, itrk, it);
       bool muaccept = false;
       bool eleaccept = false;
-      if (found_reco_muons)
+      if (useMuons_ && found_reco_muons)
         muaccept = matchMuons(itrk, reco_muons);
-      else if (found_pat_muons) {
+      else if (useMuons_ && found_pat_muons) {
         muaccept = matchMuons(itrk, pat_muons);
       }
-      if (found_reco_elecs)
+      if (useElecs_ && found_reco_elecs)
         eleaccept = matchElectrons(itrk, reco_elecs, reco_elec_ids);
-      else if (found_pat_elecs) {
+      else if (useElecs_ && found_pat_elecs) {
         eleaccept = matchElectrons(itrk, pat_elecs);
       }
 
@@ -543,14 +543,14 @@ void JetPlusTrackCorrector::matchTracks(const JetTracks& jet_tracks,
       if (!found) {
         bool muaccept = false;
         bool eleaccept = false;
-        if (found_reco_muons)
+        if (useMuons_ && found_reco_muons)
           muaccept = matchMuons(itrk, reco_muons);
-        else if (found_pat_muons) {
+        else if (useMuons_ && found_pat_muons) {
           muaccept = matchMuons(itrk, pat_muons);
         }
-        if (found_reco_elecs)
+        if (useElecs_ && found_reco_elecs)
           eleaccept = matchElectrons(itrk, reco_elecs, reco_elec_ids);
-        else if (found_pat_elecs) {
+        else if (useElecs_ && found_pat_elecs) {
           eleaccept = matchElectrons(itrk, pat_elecs);
         }
 
