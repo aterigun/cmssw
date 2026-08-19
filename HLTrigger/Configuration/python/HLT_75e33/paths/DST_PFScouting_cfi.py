@@ -1,5 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
+from ..sequences.HLTJetPlusTrackForScoutingSequence_cfi import *
 from ..modules.hltAK4PFJetsForTaus_cfi import *
 from ..modules.hltL1GTAcceptFilter_cfi import *
 from ..modules.hltFixedGridRhoFastjetAllCaloForEGamma_cfi import *
@@ -76,5 +77,6 @@ DST_PFScouting = cms.Path(
     + hltPFPuppiMHT
     + HLTBtagDeepCSVSequencePFPuppi
     + HLTBtagDeepFlavourSequencePFPuppi
+    + HLTJetPlusTrackForScoutingSequence
     + HLTEndSequence
 )
