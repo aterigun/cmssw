@@ -272,6 +272,7 @@ fragment.load("HLTrigger/Configuration/HLT_75e33/services/DQMStore_cfi")
 fragment.load("HLTrigger/Configuration/HLT_75e33/services/FastTimerService_cfi")
 fragment.load("HLTrigger/Configuration/HLT_75e33/services/MessageLogger_cfi")
 fragment.load("HLTrigger/Configuration/HLT_75e33/services/ThroughputService_cfi")
+fragment.load("HLTrigger/Configuration/HLT_75e33/paths/DST_PFScouting_cfi")
 
 fragment.schedule = cms.Schedule(*[
 
@@ -309,6 +310,7 @@ fragment.schedule = cms.Schedule(*[
     fragment.HLT_DoubleMediumDeepTauPFTauHPS35_eta2p1,
     fragment.HLT_IsoMu20_eta2p1_LooseDeepTauPFTauHPS27_eta2p1_CrossL1,
     fragment.HLT_Ele30_WPTight_L1Seeded_LooseDeepTauPFTauHPS30_eta2p1_CrossL1,
+    fragment.DST_PFScouting,
     ### Removed temporarily until final decision on L1T tau Phase-2
     #fragment.L1T_DoubleNNTau52,
     #fragment.L1T_SingleNNTau150,

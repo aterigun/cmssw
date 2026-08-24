@@ -1,0 +1,11 @@
+<use name="FWCore/Framework"/>
+<use name="FWCore/ParameterSet"/>
+<use name="FWCore/Utilities"/>
+<use name="FWCore/MessageLogger"/>
+<use name="DataFormats/CaloRecHit"/>
+<use name="DataFormats/JetReco"/>
+<use name="DataFormats/Math"/>
+<use name="fastjet"/>
+<library file="*.cc" name="RecoHGCalHGCalJetProducersPlugins">
+  <flags EDM_PLUGIN="1"/>
+</library>
