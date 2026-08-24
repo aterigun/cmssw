@@ -38,8 +38,6 @@ private:
   const double jetPtMin_;
   const double inputEtMin_;
   const double minEta_;
-  const edm::InputTag barrelJetsTag_;
-  edm::EDGetTokenT<reco::CaloJetCollection> barrelJetsToken_;
 };
 
 HGCalJetProducer::HGCalJetProducer(const edm::ParameterSet& conf)
@@ -48,10 +46,7 @@ HGCalJetProducer::HGCalJetProducer(const edm::ParameterSet& conf)
       antiktRadius_(conf.getParameter<double>("antiktRadius")),
       jetPtMin_(conf.getParameter<double>("jetPtMin")),
       inputEtMin_(conf.getParameter<double>("inputEtMin")),
-      minEta_(conf.getParameter<double>("minEta")),
-      barrelJetsTag_(conf.getParameter<edm::InputTag>("barrelJets")) {
-  if (!barrelJetsTag_.label().empty())
-    barrelJetsToken_ = consumes<reco::CaloJetCollection>(barrelJetsTag_);
+      minEta_(conf.getParameter<double>("minEta")) {
   produces<reco::CaloJetCollection>();
 }
 
@@ -102,12 +97,6 @@ void HGCalJetProducer::produce(edm::Event& event, const edm::EventSetup&) {
   }
 
   auto result = std::make_unique<reco::CaloJetCollection>();
-
-  if (!barrelJetsTag_.label().empty()) {
-    auto const& barrelJets = event.get(barrelJetsToken_);
-    result->insert(result->end(), barrelJets.begin(), barrelJets.end());
-  }
-
   clusterOneSide(fjInputsPlus, *result);
   clusterOneSide(fjInputsMinus, *result);
 
@@ -122,8 +111,6 @@ void HGCalJetProducer::fillDescriptions(edm::ConfigurationDescriptions& descript
   desc.add<double>("jetPtMin", 10.0)->setComment("Minimum pT of the output jets [GeV]");
   desc.add<double>("inputEtMin", 0.3)->setComment("Minimum Et of an input layer cluster [GeV]");
   desc.add<double>("minEta", 1.5)->setComment("Only cluster layer clusters above this |eta|");
-  desc.add<edm::InputTag>("barrelJets", edm::InputTag(""))
-      ->setComment("Optional barrel CaloJets copied into the output before the endcap jets");
   descriptions.add("hgcalJetProducer", desc);
 }
 

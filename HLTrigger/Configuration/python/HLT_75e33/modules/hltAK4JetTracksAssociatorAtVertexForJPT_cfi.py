@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 hltAK4JetTracksAssociatorAtVertexForJPT = cms.EDProducer("JetTracksAssociatorAtVertex",
-    jets = cms.InputTag("hltHGCalJetsForJPT"),
+    jets = cms.InputTag("hltCaloJetsForJPTMerged"),
     tracks = cms.InputTag("hltGeneralTracks"),
     coneSize = cms.double(0.4),
     useAssigned = cms.bool(False),

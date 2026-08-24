@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 hltJetPlusTrackZSPCorJetAntiKt4 = cms.EDProducer("JetPlusTrackProducer",
     # --- producer level
-    src = cms.InputTag("hltHGCalJetsForJPT"),
+    src = cms.InputTag("hltCaloJetsForJPTMerged"),
     srcTrackJets = cms.InputTag("hltAK4TrackJetsForJPT"),
     srcAddCaloJets = cms.InputTag("hltJetPlusTrackAddonSeedRecoForJPT"),
     extrapolations = cms.InputTag("hltTrackExtrapolatorForJPT"),

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 hltJetPlusTrackAddonSeedRecoForJPT = cms.EDProducer("JetPlusTrackAddonSeedProducer",
-    srcCaloJets = cms.InputTag("hltHGCalJetsForJPT"),
+    srcCaloJets = cms.InputTag("hltCaloJetsForJPTMerged"),
     srcTrackJets = cms.InputTag("hltAK4TrackJetsForJPT"),
     srcPVs = cms.InputTag("hltOfflinePrimaryVertices"),
     towerMaker = cms.InputTag("hltPhase2TowerMakerForAll"),
