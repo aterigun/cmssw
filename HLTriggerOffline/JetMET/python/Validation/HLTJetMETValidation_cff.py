@@ -11,6 +11,8 @@ HLTJetMETValSeq = cms.Sequence(
     + hltJetAnalyzerAK4PF
     + hltJetAnalyzerAK4PFCHS
     + hltJetAnalyzerAK4JPT
+    + hltJetAnalyzerAK4CaloBarrel
+    + hltJetAnalyzerAK4CaloEndcap
     + hltMetAnalyzerPF
     + hltMetAnalyzerPFCalo
 )

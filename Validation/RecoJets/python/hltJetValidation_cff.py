@@ -45,3 +45,15 @@ hltJetAnalyzerAK4JPT = _hltJetTester.clone(
     JetType = 'jpt',
     JetCorrections = "",
 )
+
+hltJetAnalyzerAK4CaloBarrel = _hltJetTester.clone(
+    src = "hltAk4CaloJetsForTrk",
+    JetType = 'calo',
+    JetCorrections = "",
+)
+
+hltJetAnalyzerAK4CaloEndcap = _hltJetTester.clone(
+    src = "hltHGCalJetsForJPT",
+    JetType = 'calo',
+    JetCorrections = "",
+)
