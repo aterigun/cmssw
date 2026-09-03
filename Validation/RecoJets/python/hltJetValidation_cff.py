@@ -57,3 +57,9 @@ hltJetAnalyzerAK4CaloEndcap = _hltJetTester.clone(
     JetType = 'calo',
     JetCorrections = "",
 )
+
+hltJetAnalyzerAK4CaloMerged = _hltJetTester.clone(
+    src = "hltCaloJetsForJPTMerged",
+    JetType = 'calo',
+    JetCorrections = "",
+)

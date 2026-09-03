@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 hltJetPlusTrackAddonSeedRecoForJPT = cms.EDProducer("JetPlusTrackAddonSeedProducer",
     srcCaloJets = cms.InputTag("hltCaloJetsForJPTMerged"),
     srcTrackJets = cms.InputTag("hltAK4TrackJetsForJPT"),
-    srcPVs = cms.InputTag("hltOfflinePrimaryVertices"),
+    srcPVs = cms.InputTag("hltFirstStepPrimaryVerticesUnsorted"),
     towerMaker = cms.InputTag("hltPhase2TowerMakerForAll"),
     PFCandidates = cms.InputTag("hltParticleFlowTmp"),
     UsePAT = cms.bool(False),

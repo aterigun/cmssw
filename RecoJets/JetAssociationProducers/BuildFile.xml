@@ -2,8 +2,13 @@
 <use name="boost"/>
 <use name="RecoJets/JetAssociationAlgorithms"/>
 <use name="FWCore/Framework"/>
+<use name="FWCore/ParameterSet"/>
+<use name="FWCore/Utilities"/>
+<use name="DataFormats/Common"/>
+<use name="DataFormats/GeometryVector"/>
 <use name="DataFormats/JetReco"/>
 <use name="DataFormats/TrackReco"/>
+<use name="DataFormats/VertexReco"/>
 <use name="DataFormats/Math"/>
 <use name="MagneticField/Engine"/>
 <use name="MagneticField/Records"/>
